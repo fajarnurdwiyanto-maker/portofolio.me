@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Eksklusif | Creative Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --accent-color: #d4af37; /* Gold elegan */
+            --text-main: #ffffff;
+            --text-sub: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- PRELOADER / ENTRANCE --- */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loader-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent-color);
+            letter-spacing: 5px;
+            opacity: 0;
+        }
+
+        /* --- LAYOUT --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* --- CONTACT FORM --- */
+        .contact-section {
+            padding: 100px 0;
+            opacity: 0;
+        }
+
+        .contact-card {
+            background: var(--glass);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        button {
+            background: var(--accent-color);
+            color: black;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s transform;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-sub);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-text">CREATIVE PORTFOLIO</div>
+    </div>
+
+    <div class="container">
+        <nav id="nav">
+            <div class="logo">PORTFOLIO.</div>
+            <div>[ 2026 ]</div>
+        </nav>
+
+        <section class="hero" id="hero">
+            <p style="color: var(--accent-color); font-weight: 600;">Halo, saya profesional dalam</p>
+            <h1>Digital Experience <br>& Strategy.</h1>
+            <p>Membangun solusi digital yang menggabungkan estetika mewah dengan fungsionalitas tinggi.</p>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="contact-card">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 2rem;">Hubungi Saya</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="email@contoh.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pesan</label>
+                        <textarea rows="5" placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                    </div>
+                    <button type="submit">Kirim Pesan</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 Designed with Elegance.
+    </footer>
+
+    <script>
+        // --- GSAP ANIMATIONS ---
+        window.addEventListener('load', () => {
+            const tl = gsap.timeline();
+
+            // 1. Loader Animation
+            tl.to(".loader-text", { duration: 1, opacity: 1, y: -20, ease: "power4.out" })
+              .to("#loader", { duration: 1.5, clipPath: "circle(0% at 50% 50%)", ease: "expo.inOut", delay: 0.5 })
+              .set("#loader", { display: "none" });
+
+            // 2. Entrance for Content
+            tl.to("#nav", { duration: 1, opacity: 1, y: 0, ease: "power3.out" }, "-=0.5")
+              .to("#hero", { duration: 1.2, opacity: 1, y: 0, ease: "power3.out" }, "-=0.8")
+              .to("#contact", { duration: 1.2, opacity: 1, y: 0, ease: "power3.out" }, "-=1");
+        });
+
+        // --- FORM LOGIC ---
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah terkirim dengan gaya yang elegan.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
