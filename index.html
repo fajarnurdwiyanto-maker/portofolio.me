@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Portfolio | Professional Presence</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #fdfdfd;
+            --text-main: #1a1a1a;
+            --text-sub: #555555;
+            --accent: #b59b7c; /* Gold Muted */
+            --white: #ffffff;
+            --border: rgba(0,0,0,0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- LUXURY ENTRANCE --- */
+        .entrance {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .entrance-logo {
+            color: var(--accent);
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 10px;
+            opacity: 0;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(253, 253, 253, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            opacity: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-left: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- HERO & SECTIONS --- */
+        section {
+            padding: 120px 10%;
+            min-height: 80vh;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .section-tag {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- FORM KONTAK --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+            color: var(--text-sub);
+            text-transform: uppercase;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 0;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .submit-btn {
+            background: var(--text-main);
+            color: var(--white);
+            padding: 15px 40px;
+            border: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent);
+        }
+
+        /* --- WHATSAPP CTA --- */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 1001;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 60px 10%;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; padding: 30px; }
+            header { padding: 1rem 5%; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="entrance">
+        <div class="entrance-logo">PORTFOLIO.</div>
+    </div>
+
+    <a href="https://wa.me/628123456789" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header id="header">
+        <div class="logo" style="font-family: 'Syne';">M.</div>
+        <nav class="nav-links">
+            <a href="#home">Beranda</a>
+            <a href="#about">Tentang Saya</a>
+            <a href="#contact">Pesan</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <span class="section-tag">Digital Excellence</span>
+            <h1>Modern <br>Visionary.</h1>
+            <p style="max-width: 500px; color: var(--text-sub);">Menghadirkan solusi desain profesional dengan estetika yang bersih dan fungsionalitas yang murni.</p>
+        </section>
+
+        <section id="about">
+            <span class="section-tag">Kisah Saya</span>
+            <h2 style="font-family: 'Syne'; font-size: 2.5rem; margin-bottom: 20px;">Filosofi Desain</h2>
+            <p style="max-width: 700px; color: var(--text-sub); font-size: 1.1rem;">
+                Saya percaya bahwa kemewahan sejati terletak pada kesederhanaan. Setiap piksel memiliki tujuan, dan setiap elemen harus memberikan kenyamanan visual bagi pengguna. Dengan pengalaman bertahun-tahun, saya membantu brand Anda bersinar di dunia digital yang bising.
+            </p>
+        </section>
+
+        <section id="contact">
+            <span class="section-tag">Kontak</span>
+            <div class="contact-container">
+                <div>
+                    <h2 style="font-family: 'Syne'; font-size: 2rem; margin-bottom: 20px;">Mari Berdiskusi.</h2>
+                    <p style="color: var(--text-sub);">Gunakan formulir ini untuk mengirimkan detail proyek atau sekadar menyapa.</p>
+                </div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" placeholder="Siapa nama Anda?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Profesional</label>
+                        <input type="email" placeholder="alamat@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pesan Anda</label>
+                        <textarea rows="4" placeholder="Apa yang bisa saya bantu?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Kirim Sekarang</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">PORTFOLIO.</div>
+        <div class="copyright">&copy; 2026 SEMUA HAK DILINDUNGI. DIBUAT DENGAN PRESISI.</div>
+    </footer>
+
+    <script>
+        // --- GSAP ENTRANCE ANIMATION ---
+        window.addEventListener('load', () => {
+            const tl = gsap.timeline();
+
+            tl.to(".entrance-logo", { opacity: 1, duration: 1 })
+              .to(".entrance-logo", { opacity: 0, duration: 0.5, delay: 0.5 })
+              .to(".entrance", { 
+                yPercent: -100, 
+                duration: 1.2, 
+                ease: "expo.inOut" 
+              })
+              .to("header", { opacity: 1, duration: 1 }, "-=0.5")
+              .from(".hero h1, .hero p, .hero .section-tag", { 
+                y: 50, 
+                opacity: 0, 
+                stagger: 0.2, 
+                duration: 1, 
+                ease: "power3.out" 
+              }, "-=0.8");
+        });
+
+        // --- FORM SUBMISSION ---
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Pesan Anda telah terkirim dengan aman. Saya akan menghubungi Anda segera.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
