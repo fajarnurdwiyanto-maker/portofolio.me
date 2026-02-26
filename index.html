@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajar | Portfolio Executive</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #121212;   /* Obsidian */
+            --accent: #c5a47e;    /* Muted Gold */
+            --bg-soft: #f9f9f9;   /* Cloud White */
+            --text-dim: #666;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-soft);
+            color: var(--primary);
+            overflow-x: hidden;
+        }
+
+        /* --- ENTRANCE ANIMATION --- */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: var(--primary);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader-content {
+            text-align: center;
+            color: var(--accent);
+            overflow: hidden;
+        }
+
+        .loader-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            transform: translateY(100px);
+        }
+
+        /* --- HEADER & LOGO --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(249, 249, 249, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- SECTION STYLING --- */
+        section { padding: 120px 10%; }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            line-height: 1;
+        }
+
+        /* --- ABOUT ME & STATS --- */
+        .stats-container {
+            display: flex;
+            gap: 50px;
+            margin-top: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            width: fit-content;
+        }
+
+        .stat-item { text-align: center; }
+        .stat-item span { display: block; font-weight: 700; font-size: 1.5rem; color: var(--accent); }
+        .stat-item label { font-size: 0.7rem; text-transform: uppercase; color: var(--text-dim); }
+
+        /* --- FEEDBACK FORM --- */
+        .feedback-card {
+            background: var(--primary);
+            color: white;
+            padding: 60px;
+            border-radius: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .input-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .input-box:focus { border-color: var(--accent); }
+
+        .full-width { grid-column: span 2; }
+
+        .submit-btn {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(197, 164, 126, 0.3); }
+
+        /* --- STICKY WHATSAPP --- */
+        .wa-sticky {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 2000;
+            transition: var(--transition);
+        }
+
+        .wa-sticky:hover { transform: scale(1.1) rotate(10deg); }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 60px 10%;
+            background: white;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-name">FAJAR</div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/628123456789" class="wa-sticky" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <a href="#" class="logo">FAJAR.</a>
+        <nav class="nav-links">
+            <a href="#hero">Beranda</a>
+            <a href="#about">Tentang Saya</a>
+            <a href="#feedback">Feedback</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div>
+                <p style="letter-spacing: 5px; color: var(--accent);">CREATIVE DIRECTOR</p>
+                <h1>Elegance In <br><i>Every Pixel.</i></h1>
+            </div>
+        </section>
+
+        <section id="about">
+            <div style="max-width: 800px;">
+                <h2 style="font-family: 'Playfair Display'; font-size: 3rem; margin-bottom: 20px;">Tentang Saya.</h2>
+                <p style="color: var(--text-dim); font-size: 1.1rem; line-height: 1.8;">
+                    Saya adalah seorang visioner di bidang digital yang menggabungkan estetika mewah dengan performa tinggi. Fokus saya adalah membantu klien mencapai identitas profesional yang tak tertandingi melalui desain yang bersih dan modern.
+                </p>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span id="view-count">12.5K</span>
+                        <label>Views</label>
+                    </div>
+                    <div class="stat-item">
+                        <span id="like-count">8.2K</span>
+                        <label>Likes</label>
+                    </div>
+                    <div class="stat-item">
+                        <span id="project-count">142</span>
+                        <label>Projects</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback">
+            <div class="feedback-card">
+                <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Berikan Feedback.</h2>
+                <p style="color: #aaa;">Saran Anda sangat berharga bagi peningkatan layanan profesional saya.</p>
+                
+                <form class="form-grid" id="fajarForm">
+                    <input type="text" placeholder="Nama Lengkap" class="input-box" required>
+                    <input type="email" placeholder="Email Anda" class="input-box" required>
+                    <textarea placeholder="Pesan Anda..." class="input-box full-width" rows="5" required></textarea>
+                    <div class="full-width">
+                        <button type="submit" class="submit-btn">Kirim Feedback</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="logo" style="margin-bottom: 20px; display: block;">FAJAR.</div>
+        <div style="font-size: 0.8rem; color: var(--text-dim); letter-spacing: 2px;">
+            &copy; 2026 DESIGNED WITH PRECISION. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script>
+        // --- ANIMASI ENTRANCE ---
+        window.addEventListener('DOMContentLoaded', () => {
+            const tl = gsap.timeline();
+
+            tl.to(".loader-name", {
+                y: 0,
+                duration: 1.5,
+                ease: "expo.out"
+            })
+            .to("#loader", {
+                clipPath: "circle(0% at 50% 50%)",
+                duration: 1.5,
+                ease: "expo.inOut",
+                delay: 0.5
+            })
+            .from("header", {
+                y: -50,
+                opacity: 0,
+                duration: 1
+            }, "-=0.5")
+            .from(".hero h1", {
+                y: 100,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power4.out"
+            }, "-=0.8");
+        });
+
+        // --- FORM HANDLING ---
+        document.getElementById('fajarForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih atas feedback Anda, Fajar akan segera meninjaunya.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
