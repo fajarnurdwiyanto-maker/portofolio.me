@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajar Nur Dwiyanto | Digital Creative Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="entrance">
+        <div class="entrance-content">
+            <h1 class="glitch">FAJAR DIGITAL</h1>
+            <p>Elevating Your Vision...</p>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">F<span>N</span>D</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#strengths">Strengths</a></li>
+                <li><a href="#polling">Polling</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h5>Hello, I am</h5>
+            <h1>Fajar Nur Dwiyanto</h1>
+            <p>Digital Creative Specialist & Web Developer</p>
+            <a href="#contact" class="btn">Let's Talk</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">Status & Hobbies</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Current Status</h3>
+                <p>Sedang menempuh pendidikan di Sekolah Menengah Atas (SMA) dengan fokus pada pengembangan diri di bidang teknologi digital dan manajemen kreatif.</p>
+            </div>
+            <div class="card">
+                <h3>Hobbies</h3>
+                <ul>
+                    <li>Web Development (HTML, CSS, JS)</li>
+                    <li>Digital Design & Video Editing</li>
+                    <li>Bus Transportation Enthusiast</li>
+                    <li>Exploring Digital Culture</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="strengths" class="container bg-alt">
+        <h2 class="section-title">Kenapa Pilih Gue?</h2>
+        <div class="grid">
+            <div class="feat">
+                <h4>Detail Oriented</h4>
+                <p>Gue sangat teliti dalam setiap baris kodingan dan detail desain visual.</p>
+            </div>
+            <div class="feat">
+                <h4>Modern Aesthetic</h4>
+                <p>Selera desain gue elegan, profesional, dan selalu mengikuti tren terbaru.</p>
+            </div>
+            <div class="feat">
+                <h4>Multi-Talented</h4>
+                <p>Bisa koding, bisa desain poster, sampai editing video dalam satu paket.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="polling" class="container">
+        <h2 class="section-title">What Do You Think?</h2>
+        <div class="poll-box">
+            <p>Seberapa keren portofolio ini menurut lo?</p>
+            <button onclick="vote('Mewah Banget!')">Mewah Banget! 🔥</button>
+            <button onclick="vote('Sangat Profesional')">Sangat Profesional ✨</button>
+            <button onclick="vote('Oke Juga!')">Oke Juga! 👍</button>
+            <div id="poll-result"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="container bg-alt">
+        <h2 class="section-title">Kritik, Pesan & Saran</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Nama Panggilan" required>
+            <input type="email" placeholder="Alamat Gmail" required>
+            <textarea placeholder="Pesan, Kritik, atau Saran lo..." rows="5" required></textarea>
+            <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Fajar Nur Dwiyanto. All Rights Reserved.</p>
+        <div class="socials">
+            <span>Elegant | Modern | Professional</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
