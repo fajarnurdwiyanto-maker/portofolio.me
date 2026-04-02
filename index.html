@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarrss Studio | Portofolio Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="entrance-screen" id="entrance">
+        <div class="entrance-content">
+            <h1 class="glitch-text">Jarrss Studio</h1>
+            <p>Membuka Pengalaman Eksklusif...</p>
+        </div>
+    </div>
+
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">Jarrss<span>Studio</span></div>
+            <nav class="nav-links">
+                <a href="#about">Tentang</a>
+                <a href="#journey">Perjalanan</a>
+                <a href="#skills">Keahlian</a>
+                <a href="#services">Layanan</a>
+            </nav>
+            <a href="#contact" class="btn-cta">Hubungi Kami</a>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Kreativitas Tanpa Batas, Solusi Tepat Sasaran.</h1>
+            <p>Selamat datang di dunia Jarrss Studio. Gua hadir untuk membantu merealisasikan ide gila lu menjadi karya yang nyata.</p>
+            <a href="#services" class="btn-cta btn-large">Lihat Paket Layanan</a>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Gua</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Halo bree! Gua adalah *creative enthusiast* di balik <strong>Jarrss Studio</strong>. Status gua saat ini berfokus sebagai *freelancer* profesional yang siap ngebantu masalah tugas, desain, dan tulisan lu.</p>
+                    <p><strong>Hobi:</strong> Mengeksplorasi desain UI/UX, menulis cerita fiksi, dan ngopi sambil dengerin musik lo-fi.</p>
+                    <br>
+                    <h3>Kenapa Memilih Saya?</h3>
+                    <ul class="why-me-list">
+                        <li><i class="fas fa-check-circle"></i> Pengerjaan Cepat & Tepat Waktu.</li>
+                        <li><i class="fas fa-check-circle"></i> Kualitas Bintang Lima, Harga Bersahabat.</li>
+                        <li><i class="fas fa-check-circle"></i> Komunikasi Asik dan Terbuka (Anti kaku!).</li>
+                        <li><i class="fas fa-check-circle"></i> Revisi sampai lu bener-bener puas.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section journey" id="journey">
+        <div class="container">
+            <h2 class="section-title">Perjalanan Jarrss Studio</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3>Awal Mula</h3>
+                    <p>Berawal dari iseng ngebantu temen ngerjain tugas kampus dan bikin desain poster acara.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3>Eksplorasi Skill</h3>
+                    <p>Mulai mendalami ilmu copywriting dan desain grafis secara profesional untuk audiens yang lebih luas.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3>Jarrss Studio Lahir</h3>
+                    <p>Membangun identitas Jarrss Studio sebagai *one-stop solution* buat Mahasiswa, Content Creator, dan Pebisnis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Minat & Keahlian (Diagram)</h2>
+            <div class="skills-wrapper">
+                <div class="skill-box">
+                    <div class="skill-name">Graphic Design (UI/UX, Sosmed)</div>
+                    <div class="progress-bar"><div class="progress" style="width: 90%;">90%</div></div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-name">Copywriting & Scripting</div>
+                    <div class="progress-bar"><div class="progress" style="width: 85%;">85%</div></div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-name">Penyelesaian Tugas Akademik</div>
+                    <div class="progress-bar"><div class="progress" style="width: 95%;">95%</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">Layanan Eksklusif Kami</h2>
+            <p style="text-align:center; color: #a1a1aa; margin-bottom: 40px;">Solusi jitu untuk Mahasiswa, Content Creator, dan Desainer. <br> <span class="badge-free">🎉 FREE Bonus File Mentahan & Konsultasi Untuk Pembeli Baru!</span></p>
+
+            <h3 class="package-category"><i class="fas fa-graduation-cap"></i> Jasa Tugas Pelajaran (Khusus Mahasiswa/Pelajar)</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>Basic</h4>
+                    <p class="desc">Bantu riset & ketik makalah standar.</p>
+                    <div class="price"><span class="old-price">Rp 75.000</span> Rp 49.000</div>
+                    <button class="btn-detail" onclick="openModal('tugas', 'basic')">Lihat Selengkapnya</button>
+                </div>
+                <div class="pricing-card recommended">
+                    <div class="badge">Paling Laris</div>
+                    <h4>Menengah</h4>
+                    <p class="desc">Makalah + PPT Menarik + Cek Plagiasi.</p>
+                    <div class="price"><span class="old-price">Rp 150.000</span> Rp 99.000</div>
+                    <button class="btn-detail" onclick="openModal('tugas', 'menengah')">Lihat Selengkapnya</button>
+                </div>
+                <div class="pricing-card">
+                    <h4>Premium</h4>
+                    <p class="desc">Joki Skripsi/Tugas Akhir Bab per Bab (Full Service).</p>
+                    <div class="price"><span class="old-price">Rp 300.000</span> Rp 199.000</div>
+                    <button class="btn-detail" onclick="openModal('tugas', 'premium')">Lihat Selengkapnya</button>
+                </div>
+            </div>
+
+            <h3 class="package-category mt-5"><i class="fas fa-paint-brush"></i> Jasa Desain (Untuk Content Creator / Bisnis)</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>Basic</h4>
+                    <p class="desc">1 Desain Feed/Story IG yang rapi.</p>
+                    <div class="price"><span class="old-price">Rp 50.000</span> Rp 29.000</div>
+                    <button class="btn-detail" onclick="openModal('desain', 'basic')">Lihat Selengkapnya</button>
+                </div>
+                <div class="pricing-card recommended">
+                    <div class="badge">Best Value</div>
+                    <h4>Menengah</h4>
+                    <p class="desc">Carousel 5 Slide + Visual Estetik.</p>
+                    <div class="price"><span class="old-price">Rp 120.000</span> Rp 79.000</div>
+                    <button class="btn-detail" onclick="openModal('desain', 'menengah')">Lihat Selengkapnya</button>
+                </div>
+                <div class="pricing-card">
+                    <h4>Premium</h4>
+                    <p class="desc">Paket Branding Bulanan (15 Desain/Bulan).</p>
+                    <div class="price"><span class="old-price">Rp 750.000</span> Rp 499.000</div>
+                    <button class="btn-detail" onclick="openModal('desain', 'premium')">Lihat Selengkapnya</button>
+                </div>
+            </div>
+
+            <h3 class="package-category mt-5"><i class="fas fa-pen-nib"></i> Jasa Copywriting (Tingkatkan Penjualan/Engagement)</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>Basic</h4>
+                    <p class="desc">Caption Sosmed (Pendek & Engaging).</p>
+                    <div class="price"><span class="old-price">Rp 40.000</span> Rp 25.000</div>
+                    <button class="btn-detail" onclick="openModal('copy', 'basic')">Lihat Selengkapnya</button>
+                </div>
+                <div class="pricing-card recommended">
+                    <div class="badge">Hot Promo</div>
+                    <h4>Menengah</h4>
+                    <p class="desc">Script Video TikTok/Reels/Shorts.</p>
+                    <div class="price"><span class="old-price">Rp 100.000</span> Rp 69.000</div>
+                    <button class="btn-detail" onclick="openModal('copy', 'menengah')">Lihat Selengkapnya</button>
+                </div>
+                <div class="pricing-card">
+                    <h4>Premium</h4>
+                    <p class="desc">Sales Page / Artikel SEO Friendly.</p>
+                    <div class="price"><span class="old-price">Rp 250.000</span> Rp 149.000</div>
+                    <button class="btn-detail" onclick="openModal('copy', 'premium')">Lihat Selengkapnya</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Kirim Pesan, Kritik, atau Saran</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Nama Panggilan / Nickname" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Alamat Gmail" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Tulis pesan, kritik, atau saran lu di sini bree..." required></textarea>
+                </div>
+                <button type="submit" class="btn-cta btn-full">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="social-section container">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Jarrss<span>Studio</span></div>
+            <p>Menciptakan karya elegan dengan sentuhan personal.</p>
+            <p class="official-email"><i class="fas fa-envelope"></i> official@jarrssstudio.com</p>
+            <p class="copyright">&copy; 2026 Jarrss Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6281234567890" target="_blank" class="floating-wa">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title">Judul Paket</h3>
+            <div id="modal-body">Isi Benefit</div>
+            <a href="https://wa.me/6281234567890" class="btn-cta btn-full mt-3"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
